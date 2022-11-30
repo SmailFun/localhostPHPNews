@@ -1,16 +1,21 @@
-<!DOCTYPE html>
+<?php
+
+namespace Application\Controller;
+
+use mysqli;
+
+class ViewNews
+{
+    public function viewList(): void
+    {
+        echo '<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>News</title>
 </head>
 <body>
-<H1 style="font-size:60px; text-align: center"> Список новостей </H1>
-
-<?php
-class ViewNews {
-    function View()
-    {
+<H1 style="font-size:60px; text-align: center"> Список новостей </H1>';
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -33,15 +38,15 @@ class ViewNews {
         } else {
             echo "0 results";
         }
-        $conn->close();
-    }
-}
-?>
 
-<br>
+        $conn->close();
+
+        echo '<br>
 <a href="../create">Создать Новость</a>
 
 
 
 </body>
-</html>
+</html>';
+    }
+}
