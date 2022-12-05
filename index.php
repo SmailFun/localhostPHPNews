@@ -23,6 +23,8 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $segments = explode('/', trim($uri, '/'));
 
+
+
 (new Route)->routeProcessing(ROUTES, $segments);
 
 

@@ -1,18 +1,18 @@
 <?php
-
+use Application\Controller\ViewNews;
 use Application\Controller\AddNews;
 
-const ROUTES = [
-    'news' =>[
+const ROUTES =
+[
+    'news' => [
         'controller' => ViewNews::class,
         'method' => 'viewList',
         'child' => [
-            'add_news' => [
+            'create' => [
                 'controller' => AddNews::class,
                 'method' => 'addList',
                 'child' => []
                 ]
             ]
         ]
-
-];
+    ];

@@ -7,9 +7,38 @@ use Application\Controller\ViewNews;
 
 class Route
 {
-    public function routeProcessing(array $routes, array $segments, $array): bool
+    private int $counter = 0;
+
+    public function routeProcessing(array $routes, array $uri)
     {
-//        echo ViewNews::class;
+        foreach ($routes as $value => $array)
+        {
+            if($uri[$this->counter] == $value)
+            {
+                if($uri[$this->counter + 1])
+                {
+                    $this->counter++;
+                    return $this->routeProcessing($array['child'], $uri);
+                } else {
+                    $class = new $array['controller'];
+
+                    $function = $array['method'];
+
+                    $class->$function();
+
+                    return 0;
+                }
+            }
+        }
+      /* print_r($uri[0]); print_r($value[0]);*/
+
+        echo '  PAGE NOT FOUND 404';
+
+
+
+
+
+  /*     echo ViewNews::class;
         foreach ($routes as $value) {
 
             if ($value == $segments[0]) {
@@ -26,6 +55,6 @@ class Route
             }
 
         }
-        return false;
+        return false;*/
     }
 }
