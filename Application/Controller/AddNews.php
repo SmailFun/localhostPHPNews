@@ -41,7 +41,7 @@ class AddNews
     </table>
 </form>
 
-<a href="../List">Вернуться к списку новостей</a>
+<a href="../news">Вернуться к списку новостей</a>
 </body>
 </html>';
     }

@@ -42,7 +42,7 @@ class ViewNews
         $conn->close();
 
         echo '<br>
-<a href="../create">Создать Новость</a>
+<a href="../news/create">Создать Новость</a>
 
 
 

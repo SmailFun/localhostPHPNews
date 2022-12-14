@@ -1,10 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "myDB";
+ use Application\Models\DataBase;
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+mysqli::class;
 
 if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);

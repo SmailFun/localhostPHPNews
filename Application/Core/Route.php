@@ -11,11 +11,11 @@ class Route
 
     public function routeProcessing(array $routes, array $uri)
     {
-        foreach ($routes as $value => $array)
+        foreach ($routes as $key => $array)
         {
-            if($uri[$this->counter] == $value)
+            if($uri[$this->counter] == $key)
             {
-                if($uri[$this->counter + 1])
+                if($uri[$this->counter +1])
                 {
                     $this->counter++;
                     return $this->routeProcessing($array['child'], $uri);
@@ -30,7 +30,7 @@ class Route
                 }
             }
         }
-      /* print_r($uri[0]); print_r($value[0]);*/
+      print_r($uri[0]); print_r($key[0]);
 
         echo '  PAGE NOT FOUND 404';
 

@@ -12,7 +12,12 @@ const ROUTES =
                 'controller' => AddNews::class,
                 'method' => 'addList',
                 'child' => []
-                ]
+                ],
+            /*'confirm' => [
+                'controller' => EditNews::class,
+                'method' => 'editList',
+                'child' => []
+                ]*/
             ]
         ]
     ];
